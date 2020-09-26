@@ -1,0 +1,145 @@
+<script type="text/javascript" src="/media/js/admin/RelatedObjectLookups.js"></script>
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<body>
+    
+    <div class="bradcam_area bradcam_bg_1">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text">
+                        <h3>{{robot_details.Name}}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="catagory_area">
+        <div class="container">
+            <form method="POST" action="{%url 'robots:Robot_Search'%}">
+                {% csrf_token %}
+                <div class="row cat_search">
+                    <div class="col-lg-3 col-md-4">
+                        <div class="single_input">
+                            <input name="RobotName" type="text" placeholder="Search keyword">
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4">
+                        <div class="single_input">
+                            <select class="wide" >
+                                <option data-display="Location">Location</option>
+                                {% for l in location %}                         
+                                <option value="">{{l.Name}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4">
+                        <div class="single_input">
+                            <select class="wide">
+                                <option data-display="Category">Category</option>
+                                {% for c in category %}                         
+                                <option value="">{{c.Name}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-12">
+                        <div class="job_btn">
+                            <button type="submit"  class="boxed-btn3">Find Robot</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+         
+        </div>
+    </div>
+    <div class="job_details_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                  
+                    <div class="job_details_header">
+                        <div class="single_jobs white-bg d-flex justify-content-between">
+                          
+                            <div class="jobs_left d-flex align-items-center">
+                              
+                                <div class="thumb">
+                                    <img style="width:49px;height: 49px;" src="{% static 'static_file/img/CR2.JPG'%}" alt="">
+                                </div>
+                                <div class="jobs_conetent">
+                                    <a href=""><h4>{{robot_details.Name}}</h4></a>
+                                    <div class="links_locat d-flex align-items-center">
+                                        <div class="location">
+                                          <p>Model: {{robot_details.Model}}</p>
+                                        </div>
+                                        <div class="location">
+                                            <p>SN: {{robot_details.SN}}</p>
+                                        </div>
+                                        <div class="location">
+                                            <p>Software : {{robot_details.Software}}</p>
+                                        </div>
+                                      
+                                        <div class="location">
+                                            <p> </i>MAC : {{robot_details.MAC}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        </div>
+                    </div>
+                    <div class="descript_wrap white-bg">
+                      
+                        <div class="single_wrap">
+                            <h4>Category</h4>
+                            <p>{{categoryName}}</p>
+                        </div>
+                        <div class="single_wrap">
+                            <h4>Location</h4>
+                            <p>{{locationName}}</p>
+                        </div>
+                    </div>
+                    <div class="apply_job_form white-bg">
+                        <h4>Post A Schedule for the robot</h4>
+                        <form method="POST" action="{%url 'robots:schedule_Submit' %}">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="input_field">
+                                        <input name="ProcessId" type="text" placeholder="Process ID">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="input_field">                                        
+                                        <input name="Schedule" type="datetime-local" id="Schedule">
+                                        <input name="id" hidden type="text" value={{robot_details.id}}>
+                                    </div>
+                                </div>
+                              
+                               
+                             
+                               <!--  <div class="col-md-12">
+                                    <div class="input_field">
+                                        <textarea name="#" id="" cols="30" rows="10" placeholder="Remark"></textarea>
+                                    </div>
+                                </div> -->
+                                <div class="col-md-12">
+                                    <div class="submit_btn">
+                                        <button class="boxed-btn3 w-100" type="submit">Schedule Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                  
+                </div>
+            
+            </div>
+        </div>
+    </div>
+
+</body>
+{% endblock body %}
+</html>

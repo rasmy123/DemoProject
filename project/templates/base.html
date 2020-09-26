@@ -1,0 +1,293 @@
+
+{% load static %}
+
+<!doctype html>
+<html class="no-js" lang="zxx">
+    <head>
+        
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>LUCA ROBOTICS</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+        <!-- <link rel="manifest" href="site.webmanifest"> -->
+        <link rel="shortcut icon" type="image/x-icon" href="{% static 'static_file/img/favicon.png'%}">
+        <!-- Place favicon.ico in the root directory -->
+    
+        <!-- CSS here -->
+        <link rel="stylesheet" href="{% static 'static_file/css/bootstrap.min.css'%}">
+        <link rel="stylesheet" href="{% static 'static_file/css/owl.carousel.min.css'%}">
+        <link rel="stylesheet" href="{% static 'static_file/css/magnific-popup.css'%}">
+        <link rel="stylesheet" href="{% static 'static_file/css/font-awesome.min.css'%}">
+        <link rel="stylesheet" href="{% static 'static_file/css/themify-icons.css'%}">
+        <link rel="stylesheet" href="{% static 'static_file/css/nice-select.css'%}">
+        <link rel="stylesheet" href="{% static 'static_file/css/flaticon.css'%}">
+        <link rel="stylesheet" href="{% static 'static_file/css/gijgo.css'%}">
+        <link rel="stylesheet" href="{% static 'static_file/css/animate.min.css'%}">
+        <link rel="stylesheet" href="{% static 'static_file/css/slicknav.css'%}">    
+        <link rel="stylesheet" href="{% static 'static_file/css/style.css'%}">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+        <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+    </head>
+    
+
+<body>
+
+ <!-- header-start -->
+ <header >
+    
+    <div class="header-area">
+       
+            <div id="sticky-header" class="main-header-area ">
+             
+              <div class="container-fluid  " >    
+                
+                    <div class="header_bottom_border ">
+                        
+                        <div class="row align-items-center ">
+                            <div class="col-xl-3 col-lg-2">
+                                <div class="logo">
+                                    <a href="{%url 'robots:home'%}">
+                                        <img src="{% static 'static_file/img/logo - Copy.png'%}" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-7">
+                                <div class="main-menu  d-none d-lg-block">
+                                    <nav>
+                                        <ul id="navigation">
+                                            <li><a href="{%url 'robots:home'%}">home</a></li>
+                                        
+
+                                            <li><a href="#">Browse <i class="ti-angle-down"></i></a>
+                                                <ul class="submenu">
+                                                    <li><a href="{%url 'robots:robot_list'%}">Robot </a></li>
+                                                    <li><a href="{%url 'robots:location_list'%}">Location </a></li>
+                                                    <li><a href="{%url 'robots:category_list'%}">Category</a></li>
+                                                    <li><a href="{%url 'robots:schedule_list'%}">Schedule</a></li>
+                                                </ul>
+                                            </li>
+
+                                            <li><a href="#">Schedule <i class="ti-angle-down"></i></a>
+                                                <ul class="submenu">
+                                                    <li><a href="candidate.html">Schedule by Category </a></li>
+                                                    <li><a href="job_details.html">Schedule by Location </a></li>
+                                                    <li><a href="{%url 'robots:schedule_details'%}">Schedule by Robot</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#">History <i class="ti-angle-down"></i></a>
+                                                <ul class="submenu">
+                                                    <li><a href="{%url 'robots:history_list'%}">Robot Motion</a></li>
+                                                    <li><a href="#">Robot Life</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="contact.html">Contact</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                                <div class="Appointment">
+                                    <div class="phone_num d-none d-xl-block">
+                                        <a href="http://127.0.0.1:8000/admin">Manage</a>
+                                    </div>
+                                    <div class="phone_num d-none d-xl-block">
+                                        <ul class="navbar-nav justify-content-end">
+                                            
+                                            {% if context.user.is_authenticated %}
+                                              <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                                  {% if context.user.avatar %}
+                                                    <img src="{{ context.user.avatar }}" class="rounded-circle align-self-center mr-2" style="width: 32px;">
+                                                  {% else %}
+                                                    <i class="far fa-user-circle fa-lg rounded-circle align-self-center mr-2" style="width: 32px;"></i>
+                                                  {% endif %}
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                  <h5 class="dropdown-item-text mb-0">{{ context.user.name }}</h5>
+                                                  <p class="dropdown-item-text text-muted mb-0">{{ context.user.email }}</p>
+                                                  <div class="dropdown-divider"></div>
+                                                  <a href="{%url 'robots:signout'%}" class="dropdown-item" style="color: brown;text-align: center;">Sign Out</a>
+                                                </div>
+                                              </li>
+                                              {% else %}
+                                              <meta http-equiv="REFRESH" content="0;url=http://127.0.0.1:8000/robots">
+                                          
+                                            {% endif %}
+                                          </ul>
+                                    </div>
+                                    <div class="d-none d-lg-block">
+                                        <a class="boxed-btn3" href="{%url 'robots:schedule_details'%}">Post a Schedule</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+               
+            </div>
+        </div>
+       
+    </div>
+    
+</header>
+<!-- header-end -->
+
+{% block body %}
+{% endblock body %}
+
+<!-- footer start -->
+<footer class="footer">
+    <div class="footer_top">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-md-6 col-lg-3">
+                    <div class="footer_widget wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
+                        <div class="footer_logo">
+                            <a href="#">
+                                <img src="img/logo.png" alt="">
+                            </a>
+                        </div>
+                        <p>
+                            Tel: +20223481300 <br>
+
+                            Fax: +20223481333/4 <br>
+
+                            Address: 6 Farid Semeika St., Heliopolis,<br>
+
+                            Cairo,<br>
+
+                            Egypt.<br>
+
+                            11351<br>
+                        </p>
+                        <div class="socail_links">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <i class="ti-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-google-plus"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-instagram"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-xl-2 col-md-6 col-lg-2">
+                    <div class="footer_widget wow fadeInUp" data-wow-duration="1.1s" data-wow-delay=".4s">
+                        <h3 class="footer_title">
+                            Company
+                        </h3>
+                        <ul>
+                            <li><a href="#">About </a></li>                          
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6 col-lg-3">
+                    <div class="footer_widget wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".5s">
+                        <h3 class="footer_title">
+                            Category
+                        </h3>
+                        <ul>
+                            <li><a href="#">Cleaning Robot</a></li>
+                            <li><a href="#">HVAC Robot</a></li>
+                            <li><a href="#">MAintenace Robot</a></li>
+                            <li><a href="#">Down Time Robot</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6 col-lg-4">
+                    <div class="footer_widget wow fadeInUp" data-wow-duration="1.3s" data-wow-delay=".6s">
+                        <h3 class="footer_title">
+                            Subscribe
+                        </h3>
+                        <form action="#" class="newsletter_form">
+                            <input type="text" placeholder="Enter your mail">
+                            <button type="submit">Subscribe</button>
+                        </form>
+                     
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copy-right_text wow fadeInUp" data-wow-duration="1.4s" data-wow-delay=".3s">
+        <div class="container">
+            <div class="footer_border"></div>
+            <div class="row">
+                <div class="col-xl-12">
+                    <p class="copy_right text-center">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> Beshay Steel. All Rights Reserved. by <a href="https://Beshaysteel.com" target="_blank">BeshaySteel</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--/ footer end  -->
+    <!--/ footer end  -->
+    
+    <!-- link that opens popup -->
+    <!-- JS here -->
+    
+
+    <script src="{% static 'static_file/js/vendor/modernizr-3.5.0.min.js'%}"></script>
+    <script src="{% static 'static_file/js/vendor/jquery-1.12.4.min.js'%}"></script>
+    <script src="{% static 'static_file/js/popper.min.js'%}"></script>
+    <script src="{% static 'static_file/js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'static_file/js/owl.carousel.min.js'%}"></script>
+    <script src="{% static 'static_file/js/isotope.pkgd.min.js'%}"></script>
+    <script src="{% static 'static_file/js/ajax-form.js'%}"></script>
+    <script src="{% static 'static_file/js/waypoints.min.js'%}"></script>
+    <script src="{% static 'static_file/js/jquery.counterup.min.js'%}"></script>
+    <script src="{% static 'static_file/js/imagesloaded.pkgd.min.js'%}"></script>
+    <script src="{% static 'static_file/js/scrollIt.js'%}"></script>
+    <script src="{% static 'static_file/js/jquery.scrollUp.min.js'%}"></script>
+    <script src="{% static 'static_file/js/wow.min.js'%}"></script>
+    <script src="{% static 'static_file/js/nice-select.min.js'%}"></script>
+    <script src="{% static 'static_file/js/jquery.slicknav.min.js'%}"></script>
+    <script src="{% static 'static_file/js/jquery.magnific-popup.min.js'%}"></script>
+    <script src="{% static 'static_file/js/plugins.js'%}"></script>
+    <script src="{% static 'static_file/js/gijgo.min.js'%}"></script>
+
+
+
+    <!--contact js-->
+    <script src="{% static 'static_file/js/contact.js'%}"></script>
+    <script src="{% static 'static_file/js/jquery.ajaxchimp.min.js'%}"></script>
+    <script src="{% static 'static_file/js/jquery.form.js'%}"></script>
+    <script src="{% static 'static_file/js/jquery.validate.min.js'%}"></script>
+    <script src="{% static 'static_file/js/mail-script.js'%}"></script>
+
+
+    <script src="{% static 'static_file/js/main.js'%}"></script>
+    </body>
+    
+    </html>

@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<body>
+    <div class="bradcam_area bradcam_bg_1">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text">
+                        <h3>{{robot_details.Name}}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="job_details_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="job_details_header">
+                        <div class="single_jobs white-bg d-flex justify-content-between">
+                          
+                            <div class="jobs_left d-flex align-items-center">
+                              
+                                <div class="thumb">
+                                    <img style="width:49px;height: 49px;" src="{% static 'static_file/img/CR2.JPG'%}" alt="">
+                                </div>
+                                <div class="jobs_conetent">
+                                    <a href=""><h4>{{robot_details.Name}}</h4></a>
+                                    <div class="links_locat d-flex align-items-center">
+                                        <div class="location">
+                                          <p>Model: {{robot_details.Model}}</p>
+                                        </div>
+                                        <div class="location">
+                                            <p>SN: {{robot_details.SN}}</p>
+                                        </div>
+                                        <div class="location">
+                                            <p>Software : {{robot_details.Software}}</p>
+                                        </div>
+                                      
+                                        <div class="location">
+                                            <p> </i>MAC : {{robot_details.MAC}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        </div>
+                    </div>
+                    <div class="descript_wrap white-bg">
+                        <div class="single_wrap">
+                            <h4>Robot description</h4>
+                            <p>These cutting-edge robots clean both roof and ground mounted solar arrays to a high standard.</p>
+                            <p>The lithium battery-powered robot is capable of working on slopes up to 25 degrees, with a variable speed of up to 30 metres per minute.  We can clean up to 5,000m2 per day with a single robot and operative.</p>
+                        </div>
+                  
+                        <div class="single_wrap">
+                            <h4>Key Solar Panel Cleaning Robot Facts</h4>
+                            <ul>
+                                <li>Single operative use</li>
+                                <li>Cleans roof and ground mounted panels</li>
+                                <li>Length 1450 mm</li>
+                                <li>Width 1300 mm</li>
+                                <li>Height 350 mm</li>
+                                <li>Brush width 1200 mm or 2200 mm</li>
+                                <li>Total weight 65 kg</li>
+                                <li>Brush rotation speed 160 RPM</li>
+                                <li>Climbing capacity 25 degrees></li>
+                            </ul>
+                        </div>
+                        <div class="single_wrap">
+                            <h4>Category</h4>
+                            <p>{{category.Name}}</p>
+                        </div>
+                        <div class="single_wrap">
+                            <h4>Location</h4>
+                            <p>{{location.Name}}</p>
+                        </div>
+                    </div>
+                    <div class="apply_job_form white-bg">
+                        <h4>Post A Schedule for the robot</h4>
+                        <form method="POST" action="{%url 'robots:schedule_Submit' %}">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="input_field">
+                                        <input name="ProcessId" type="text" placeholder="Process ID">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="input_field">                                        
+                                        <input name="Schedule" type="datetime-local" id="Schedule">
+                                    </div>
+                                </div>
+                              
+                               
+                             
+                               <!--  <div class="col-md-12">
+                                    <div class="input_field">
+                                        <textarea name="#" id="" cols="30" rows="10" placeholder="Remark"></textarea>
+                                    </div>
+                                </div> -->
+                                <div class="col-md-12">
+                                    <div class="submit_btn">
+                                        <button class="boxed-btn3 w-100" type="submit">Schedule Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+
+</body>
+{% endblock body %}
+</html>

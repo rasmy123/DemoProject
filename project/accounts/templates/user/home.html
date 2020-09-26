@@ -1,0 +1,427 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+    <!-- header-start -->
+
+    <!-- header-end -->
+
+    <!-- slider_area_start -->
+    <div class="slider_area">
+        <div class="single_slider  d-flex align-items-center slider_bg_1">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 col-md-6">
+                        <div class="slider_text">
+                            <h5 class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".2s">600+ Robots listed</h5>
+                            <h3 class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">Improved
+                                Production level
+                                with LUCA Robotics</h3>
+                            <p class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".4s">EVERYONE WANTS THE INNOVATION THROUGH ROBOTICS</p>
+                           <!--  <div class="sldier_btn wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+                                <a href="#" class="boxed-btn3">Upload your Resume</a>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ilstration_img wow fadeInRight d-none d-lg-block text-right" data-wow-duration="1s" data-wow-delay=".2s">
+            <img  src="{% static 'static_file/img/banner/banner-img.png'%}" alt="">
+        </div>
+    </div>
+    <!-- slider_area_end -->
+
+    <!-- catagory_area -->
+    <div class="catagory_area">
+        <div class="container">
+            <div class="row cat_search">
+                <div class="col-lg-3 col-md-4">
+                    <div class="single_input">
+                        <input type="text" placeholder="Search keyword">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <div class="single_input">
+                        <select class="wide" >
+                            <option data-display="Location">Location</option>
+                            <option value="1">Location1</option>
+                            <option value="2">Location2</option>
+                            <option value="4">Location3</option>
+                          </select>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <div class="single_input">
+                        <select class="wide">
+                            <option data-display="Category">Category</option>
+                            <option value="1">Category 1</option>
+                            <option value="2">Category 2</option>
+                            <option value="4">Category 3</option>
+                          </select>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-12">
+                    <div class="job_btn">
+                        <a href="#" class="boxed-btn3">Find Robot</a>
+                    </div>
+                </div>
+            </div>
+         
+        </div>
+    </div>
+    <!--/ catagory_area -->
+
+    <!-- popular_catagory_area_start  -->
+    <div class="popular_catagory_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section_title mb-40">
+                        <h3>Popolar Categories</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-xl-3 col-md-6">
+                    <div class="single_catagory">
+                        <a href="jobs.html"><h4>Cleaning Robots</h4></a>
+                        <p> <span>50</span> Available Robot</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xl-3 col-md-6">
+                    <div class="single_catagory">
+                        <a href="jobs.html"><h4>HVAC Robots</h4></a>
+                        <p> <span>50</span> Available Robot</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xl-3 col-md-6">
+                    <div class="single_catagory">
+                        <a href="jobs.html"><h4>Down Time Robots</h4></a>
+                        <p> <span>50</span> Available Robot</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xl-3 col-md-6">
+                    <div class="single_catagory">
+                        <a href="jobs.html"><h4>Maintenance Robots</h4></a>
+                        <p> <span>50</span> Available Robot</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xl-3 col-md-6">
+                    <div class="single_catagory">
+                        <a href="jobs.html"><h4>NoN</h4></a>
+                        <p> <span>50</span> Available Robot</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xl-3 col-md-6">
+                    <div class="single_catagory">
+                        <a href="jobs.html"><h4>NoN</h4></a>
+                        <p> <span>50</span> Available Robot</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xl-3 col-md-6">
+                    <div class="single_catagory">
+                        <a href="jobs.html"><h4>NoN</h4></a>
+                        <p> <span>50</span> Available Robot</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xl-3 col-md-6">
+                    <div class="single_catagory">
+                        <a href="jobs.html"><h4>NoN</h4></a>
+                        <p> <span>50</span> Available Robot</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- popular_catagory_area_end  -->
+
+    <!-- job_listing_area_start  -->
+    <div class="job_listing_area">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="section_title">
+                        <h3>Robot Listing</h3>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="brouse_job text-right">
+                        <a href="jobs.html" class="boxed-btn4">Browse More Robot</a>
+                    </div>
+                </div>
+            </div>
+            <div class="job_lists">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="single_jobs white-bg d-flex justify-content-between">
+                            <div class="jobs_left d-flex align-items-center">
+                                <div class="thumb">
+                                    <img style="width:49px;height: 49px;" src="{% static 'static_file/img/CR2.JPG'%}" alt="">
+                                </div>
+                                <div class="jobs_conetent">
+                                    <a href="job_details.html"><h4>LR020CR00000001</h4></a>
+                                    <div class="links_locat d-flex align-items-center">
+                                        <div class="location">
+                                            <p>  Model : CR</p>
+                                        </div>
+                                        <div class="location">
+                                            <p> SN : 00000001</p>
+                                        </div>
+                                        <div class="location">
+                                            <p>Software : 0000001</p>
+                                        </div>
+                                      
+                                        <div class="location">
+                                            <p> </i>MAC Address : CDFSR4653</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="jobs_right">
+                                <div class="apply_now">                                   
+                                    <a href="job_details.html" class="boxed-btn3">Schedule</a>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12">
+                        <div class="single_jobs white-bg d-flex justify-content-between">
+                            <div class="jobs_left d-flex align-items-center">
+                                <div class="thumb">
+                                    <img style="width:49px;height: 49px;" src="{% static 'static_file/img/CR2.JPG'%}" alt="">
+                                </div>
+                                <div class="jobs_conetent">
+                                    <a href="job_details.html"><h4>LR020CR00000002</h4></a>
+                                    <div class="links_locat d-flex align-items-center">
+                                        <div class="location">
+                                            <p>  Model : CR</p>
+                                        </div>
+                                        <div class="location">
+                                            <p> SN : 00000001</p>
+                                        </div>
+                                        <div class="location">
+                                            <p>Software : 0000001</p>
+                                        </div>
+                                      
+                                        <div class="location">
+                                            <p> </i>MAC Address : CDFSR4653</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="jobs_right">
+                                <div class="apply_now">                                   
+                                    <a href="job_details.html" class="boxed-btn3">Schedule</a>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12">
+                        <div class="single_jobs white-bg d-flex justify-content-between">
+                            <div class="jobs_left d-flex align-items-center">
+                                <div class="thumb">
+                                    <img style="width:49px;height: 49px;" src="{% static 'static_file/img/CR2.JPG'%}" alt="">
+                                </div>
+                                <div class="jobs_conetent">
+                                    <a href="job_details.html"><h4>LR020CR00000003</h4></a>
+                                    <div class="links_locat d-flex align-items-center">
+                                        <div class="location">
+                                            <p>  Model : CR</p>
+                                        </div>
+                                        <div class="location">
+                                            <p> SN : 00000001</p>
+                                        </div>
+                                        <div class="location">
+                                            <p>Software : 0000001</p>
+                                        </div>
+                                      
+                                        <div class="location">
+                                            <p> </i>MAC Address : CDFSR4653</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="jobs_right">
+                                <div class="apply_now">                                   
+                                    <a href="job_details.html" class="boxed-btn3">Schedule</a>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12">
+                        <div class="single_jobs white-bg d-flex justify-content-between">
+                            <div class="jobs_left d-flex align-items-center">
+                                <div class="thumb">
+                                    <img style="width:49px;height: 49px;" src="{% static 'static_file/img/CR2.JPG'%}" alt="">
+                                </div>
+                                <div class="jobs_conetent">
+                                    <a href="job_details.html"><h4>LR020CR00000004</h4></a>
+                                    <div class="links_locat d-flex align-items-center">
+                                        <div class="location">
+                                            <p>  Model : CR</p>
+                                        </div>
+                                        <div class="location">
+                                            <p> SN : 00000001</p>
+                                        </div>
+                                        <div class="location">
+                                            <p>Software : 0000001</p>
+                                        </div>
+                                      
+                                        <div class="location">
+                                            <p> </i>MAC Address : CDFSR4653</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="jobs_right">
+                                <div class="apply_now">                                   
+                                    <a href="job_details.html" class="boxed-btn3">Schedule</a>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12">
+                        <div class="single_jobs white-bg d-flex justify-content-between">
+                            <div class="jobs_left d-flex align-items-center">
+                                <div class="thumb">
+                                    <img style="width:49px;height: 49px;" src="{% static 'static_file/img/CR2.JPG'%}" alt="">
+                                </div>
+                                <div class="jobs_conetent">
+                                    <a href="job_details.html"><h4>LR020CR00000005</h4></a>
+                                    <div class="links_locat d-flex align-items-center">
+                                        <div class="location">
+                                            <p>  Model : CR</p>
+                                        </div>
+                                        <div class="location">
+                                            <p> SN : 00000001</p>
+                                        </div>
+                                        <div class="location">
+                                            <p>Software : 0000001</p>
+                                        </div>
+                                      
+                                        <div class="location">
+                                            <p> </i>MAC Address : CDFSR4653</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="jobs_right">
+                                <div class="apply_now">                                   
+                                    <a href="job_details.html" class="boxed-btn3">Schedule</a>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                 
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- job_listing_area_end  -->
+
+    <!-- featured_candidates_area_start  -->
+    <div class="featured_candidates_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section_title mb-40">
+                        <h3>Popolar Locations</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="candidate_active owl-carousel">
+                        <div class="single_candidates text-center">
+                            <div class="thumb">
+                                <img src="{% static 'static_file/img/candiateds/HQ.JPG'%}" alt="">
+                            </div>
+                            <a href="#"><h4>HQ</h4></a>
+                            <p>Beshay Steel Nacer City Building</p>
+                        </div>
+                        <div class="single_candidates text-center">
+                            <div class="thumb">
+                                <img src="{% static 'static_file/img/candiateds/HQ.JPG'%}" alt="">
+                            </div>
+                            <a href="#"><h4>EASRCo</h4></a>
+                            <p>Egyptian American Steel Rolling CO.</p>
+                        </div>
+                        <div class="single_candidates text-center">
+                            <div class="thumb">
+                                <img src="{% static 'static_file/img/candiateds/HQ.JPG'%}" alt="">
+                            </div>
+                            <a href="#"><h4>ISRM</h4></a>
+                            <p>International Steel Rolling Mill CO.</p>
+                        </div>
+                        <div class="single_candidates text-center">
+                            <div class="thumb">
+                                <img src="{% static 'static_file/img/candiateds/HQ.JPG'%}" alt="">
+                            </div>
+                            <a href="#"><h4>ESISCo</h4></a>
+                            <p>Egyptian Steel Iron Rolling CO.</p>
+                        </div>
+                        <div class="single_candidates text-center">
+                            <div class="thumb">
+                                <img src="{% static 'static_file/img/candiateds/HQ.JPG'%}" alt="">
+                            </div>
+                            <a href="#"><h4>HQ</h4></a>
+                            <p>Beshay Steel Nacer City Building</p>
+                        </div>
+                        <div class="single_candidates text-center">
+                            <div class="thumb">
+                                <img src="{% static 'static_file/img/candiateds/HQ.JPG'%}" alt="">
+                            </div>
+                            <a href="#"><h4>EASRCo</h4></a>
+                            <p>Egyptian American Steel Rolling CO.</p>
+                        </div>
+                        <div class="single_candidates text-center">
+                            <div class="thumb">
+                                <img src="{% static 'static_file/img/candiateds/HQ.JPG'%}" alt="">
+                            </div>
+                            <a href="#"><h4>ISRM</h4></a>
+                            <p>International Steel Rolling Mill CO.</p>
+                        </div>
+                        <div class="single_candidates text-center">
+                            <div class="thumb">
+                                <img src="{% static 'static_file/img/candiateds/HQ.JPG'%}" alt="">
+                            </div>
+                            <a href="#"><h4>ESISCo</h4></a>
+                            <p>Egyptian Steel Iron Rolling CO.</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- featured_candidates_area_end  -->
+
+  
+    <!-- /testimonial_area  -->
+
+
+    <!-- footer start -->
+
+    <!--/ footer end  -->
+
+    <!-- link that opens popup -->
+    <!-- JS here -->
+  
+</body>
+ {% endblock body %}
+</html>

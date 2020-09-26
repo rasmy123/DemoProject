@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<body>
+    <div class="bradcam_area bradcam_bg_1">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text">
+                        <h3>{{history_details.Process_ID}}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="job_details_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    
+                    <div class="descript_wrap white-bg">
+                   
+                        <div class="single_wrap">
+                            <h4>Time Control</h4>
+                            <ul>
+                                <li>Start : <label style="color:blue;">{{history_details.Start}}</label></li>
+                                <li>Stop : <label style="color:blue;">{{history_details.Stop}}</label></li>
+                                <li>Forword : <label style="color:blue;">{{history_details.Forward}}</label></li>
+                                <li>Backword : <label style="color:blue;">{{history_details.Backward}}</label></li>
+                                <li>Backword Error : <label style="color:blue;">{{history_details.Backward_Error}}</label></li>
+                              
+                            </ul>
+                        </div>
+                        <div class="single_wrap">
+                            <h4>Category</h4>
+                            <p>{{category.Name}}</p>
+                        </div>
+                        <div class="single_wrap">
+                            <h4>Location</h4>
+                            <p>{{location.Name}}</p>
+                        </div>
+                        <div class="single_wrap">
+                            <h4>Status</h4>
+                            <p>{{history_details.Status}}</p>
+                        </div>
+                        <div class="single_wrap">
+                            <h4>Robot</h4>
+                            <p>{{history_details.Robot}}</p>
+                        </div>
+                    </div>
+               
+                </div>
+            
+            </div>
+        </div>
+    </div>
+
+</body>
+{% endblock body %}
+</html>
